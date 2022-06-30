@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "704268926089",
+    "project_id": "funtrip-48a6d",
+    "storage_bucket": "funtrip-48a6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704268926089:android:12aad85fc30c324ffd5a58",
+        "android_client_info": {
+          "package_name": "com.funtrip.fun_trip_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704268926089-une7le01l10je002o0h322s6q6vhr6mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.funtrip.fun_trip_v2",
+            "certificate_hash": "1acf1396a2774f94aafb542b29fa2d484e698893"
+          }
+        },
+        {
+          "client_id": "704268926089-e8vq9gv6ol49cisi7eidgom6gbb8ru1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClzkuDweiA_Y7rrhcR49BR8MFmiwwvZOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704268926089-e8vq9gv6ol49cisi7eidgom6gbb8ru1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
