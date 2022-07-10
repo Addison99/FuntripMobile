@@ -1,5 +1,11 @@
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fun_trip_v2/api_connect/driver_rest_client.dart';
+import 'package:fun_trip_v2/model/driver_model.dart';
+import 'package:fun_trip_v2/model/user_model.dart';
 import 'package:fun_trip_v2/view/HomeScreen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:lottie/lottie.dart';
@@ -40,6 +46,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () async {
                   var result = await GoogleSignIn().signIn();
                   if (result != null) {
+                    final driverRestApi = DriverRestApi(Dio());
+                    UserModel driver = UserModel(
+                      userName: result.displayName,
+                      email: result.email,
+                      password: 'no-password',
+                    );
+                    try {
+                      var createUserResult =
+                          await driverRestApi.createDriver(driver);
+                      log('create user result ${createUserResult.response}');
+                    } on DioError catch (err) {
+                      log('error while login, skipping ${err.message}');
+                    }
+
+                    UserModel.currentUser = UserModel(
+                        userName: result.displayName, email: result.email);
+
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: ((context) => const HomeScreen())));
                   }
